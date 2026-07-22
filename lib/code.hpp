@@ -16,6 +16,9 @@ class Vec {
 constexpr int64_t CHUNK_SIZE = (1 << 6);
 
 class Block {
-  int64_t cell[CHUNK_SIZE * CHUNK_SIZE];
+  private:
+    int64_t cell[CHUNK_SIZE * CHUNK_SIZE];
+  public:
+    Block();
 };
 #endif
