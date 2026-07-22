@@ -14,3 +14,6 @@ endif()
 option(DEBUGER "A befunge debugger" ON)
 option(INTERPRETER "A befunge interpreter" ON)
 option(COMPILER "A befunge compiler" ON)
+
+add_library(code STATIC lib/code.cpp)
+target_include_directories(code PUBLIC lib)
