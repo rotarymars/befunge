@@ -51,11 +51,9 @@ void FungeSpace::load(std::istream &is) {
     if (c == '\n') {
       x = 0;
       y++;
-    }
-    else if(c == '\r') {
+    } else if (c == '\r') {
       // CR
-    }
-    else {
+    } else {
       put({x, y}, static_cast<int64_t>(c));
       x++;
     }
