@@ -40,7 +40,7 @@ class FungeSpace {
     std::unordered_map<Vec, Block> blocks;
     Vec lo_,hi_;
   public:
-    int64_t get(Vec&) const;
+    int64_t get(Vec) const;
     void put(Vec&, int64_t);
     Vec min() const;
     Vec max() const;
