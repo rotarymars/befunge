@@ -9,7 +9,6 @@
 #include <cstdint>
 #include <functional>
 #include <iosfwd>
-#include <istream>
 #include <unordered_map>
 #include <vector>
 #include <cstddef>
