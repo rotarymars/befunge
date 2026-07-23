@@ -22,6 +22,8 @@ class Block {
     int64_t cell[CHUNK_SIZE * CHUNK_SIZE];
   public:
     Block();
+    int64_t operator[](int64_t) const;
+    int64_t& operator[](int64_t);
 };
 
 template <>
