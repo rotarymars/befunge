@@ -21,3 +21,13 @@ Vec FungeSpace::blockOf(Vec v) const {
 int64_t FungeSpace::localIndexOf(Vec v) const {
   return (v.y & CHUNK_MASK) * CHUNK_SIZE + (v.x & CHUNK_MASK);
 }
+
+int64_t FungeSpace::get(Vec v) const {
+  auto it = blocks.find(blockOf(v));
+  if (it == blocks.end()) {
+    return 32;
+  }
+  else {
+    return it->second[localIndexOf(v)];
+  }
+}
