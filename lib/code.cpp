@@ -59,3 +59,28 @@ void FungeSpace::load(std::istream &is) {
     }
   }
 }
+
+void Stack::push(int64_t value) {
+  data.push_back(value);
+  return;
+}
+
+int64_t Stack::pop() {
+  if (data.empty()) {
+    return static_cast<int64_t>(0);
+  }
+  int64_t value = data.back();
+  data.pop_back();
+  return value;
+}
+
+int64_t Stack::peek() const {
+  if (data.empty()) {
+    return static_cast<int64_t>(0);
+  }
+  return data.back();
+}
+
+bool Stack::empty() const { return data.empty(); }
+
+std::size_t Stack::size() const { return data.size(); }

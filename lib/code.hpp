@@ -11,6 +11,8 @@
 #include <iosfwd>
 #include <istream>
 #include <unordered_map>
+#include <vector>
+#include <cstddef>
 
 static_assert('0' == 48 && 'A' == 65 && 'a' == 97 && ' ' == 32,
               "This code assumes ASCII encoding");
@@ -58,6 +60,17 @@ public:
   Vec min() const;
   Vec max() const;
   void load(std::istream &);
+};
+
+class Stack {
+  private:
+    std::vector<int64_t> data;
+  public:
+    void push(int64_t);
+    int64_t pop();
+    int64_t peek() const;
+    bool empty() const;
+    std::size_t size() const;
 };
 
 #endif
