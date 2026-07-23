@@ -13,3 +13,7 @@ int64_t Block::operator[](int64_t index) const {
 int64_t& Block::operator[](int64_t index) {
   return cell[index];
 }
+
+Vec FungeSpace::blockOf(Vec v) const {
+  return Vec{v.x >> CHUNK_SHIFT, v.y >> CHUNK_SHIFT};
+}
