@@ -27,15 +27,19 @@ int64_t FungeSpace::get(Vec v) const {
   }
 }
 
-void FungeSpace::put(Vec, int64_t value) {
-  auto &block = blocks[blockOf(v)];
-  block[localIndexOf(v)] = value;
-  if (blocks.size() == 1) {
-    lo_ = hi_ = v;
-  } else {
+void FungeSpace::put(Vec v, int64_t value) {
+  blocks[blockOf(v)][localIndexOf(v)] = value;
+  if (value != 32) {
     lo_.x = std::min(lo_.x, v.x);
     lo_.y = std::min(lo_.y, v.y);
     hi_.x = std::max(hi_.x, v.x);
     hi_.y = std::max(hi_.y, v.y);
   }
 }
+
+FungeSpace::FungeSpace()
+    : lo_{INT64_MAX, INT64_MAX}, hi_{INT64_MIN, INT64_MIN} {}
+
+Vec FungeSpace::min() const { return lo_; }
+
+Vec FungeSpace::max() const { return hi_; }

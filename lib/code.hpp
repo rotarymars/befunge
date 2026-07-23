@@ -47,6 +47,7 @@ private:
   int64_t localIndexOf(Vec v) const;
 
 public:
+  FungeSpace();
   int64_t get(Vec) const;
   void put(Vec, int64_t);
   Vec min() const;
