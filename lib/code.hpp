@@ -16,7 +16,9 @@ class Vec {
     bool operator==(const Vec&) const = default;
 };
 
-constexpr int64_t CHUNK_SIZE = (1 << 6);
+constexpr int64_t CHUNK_SHIFT = 6;
+constexpr int64_t CHUNK_SIZE = (1 << CHUNK_SHIFT);
+constexpr int64_t CHUNK_MASK = CHUNK_SIZE - 1;
 
 class Block {
   private:
