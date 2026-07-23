@@ -10,6 +10,8 @@
 #include <functional>
 #include <unordered_map>
 
+static_assert('0' == 48 && 'A' == 65 && 'a' == 97 && ' ' == 32, "This code assumes ASCII encoding");
+
 class Vec {
 public:
   int64_t x, y;
