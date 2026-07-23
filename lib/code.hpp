@@ -48,7 +48,7 @@ private:
 
 public:
   int64_t get(Vec) const;
-  void put(Vec &, int64_t);
+  void put(Vec, int64_t);
   Vec min() const;
   Vec max() const;
 };

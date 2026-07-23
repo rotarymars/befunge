@@ -27,7 +27,7 @@ int64_t FungeSpace::get(Vec v) const {
   }
 }
 
-void FungeSpace::put(Vec &v, int64_t value) {
+void FungeSpace::put(Vec, int64_t value) {
   auto &block = blocks[blockOf(v)];
   block[localIndexOf(v)] = value;
   if (blocks.size() == 1) {
