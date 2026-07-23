@@ -17,3 +17,7 @@ int64_t& Block::operator[](int64_t index) {
 Vec FungeSpace::blockOf(Vec v) const {
   return Vec{v.x >> CHUNK_SHIFT, v.y >> CHUNK_SHIFT};
 }
+
+int64_t FungeSpace::localIndexOf(Vec v) const {
+  return (v.y & CHUNK_MASK) * CHUNK_SIZE + (v.x & CHUNK_MASK);
+}
