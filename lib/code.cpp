@@ -43,3 +43,21 @@ FungeSpace::FungeSpace()
 Vec FungeSpace::min() const { return lo_; }
 
 Vec FungeSpace::max() const { return hi_; }
+
+void FungeSpace::load(std::istream &is) {
+  int64_t x = 0, y = 0;
+  char c;
+  while (is.get(c)) {
+    if (c == '\n') {
+      x = 0;
+      y++;
+    }
+    else if(c == '\r') {
+      // CR
+    }
+    else {
+      put({x, y}, static_cast<int64_t>(c));
+      x++;
+    }
+  }
+}

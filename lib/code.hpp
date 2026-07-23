@@ -10,6 +10,7 @@
 #include <functional>
 #include <unordered_map>
 #include <iosfwd>
+#include <istream>
 
 static_assert('0' == 48 && 'A' == 65 && 'a' == 97 && ' ' == 32, "This code assumes ASCII encoding");
 
